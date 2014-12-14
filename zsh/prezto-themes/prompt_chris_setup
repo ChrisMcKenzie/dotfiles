@@ -1,0 +1,105 @@
+export PROMPT_CHAR
+
+promptchar_zsh='●' # the % character is special in zsh - escape with a preceding %
+promptchar_git='±'
+promptchar_hg='☿'
+#############################################
+
+function in_git_repo {
+  git branch > /dev/null 2>&1 && return
+  return 1
+}
+
+function in_mercurial_repo {
+  hg root > /dev/null 2>&1 && return
+  return 1
+}
+
+function in_repo {
+  (in_git_repo || in_mercurial_repo) && return
+  return 1
+}
+
+function prompt_char {
+  in_git_repo && echo -ne $promptchar_git && return
+  in_mercurial_repo && echo -ne $promptchar_hg && return
+  echo $promptchar_zsh
+}
+
+function battery {
+  echo `~/.zsh.before/functions/batcharge.py`
+}
+
+function vi_mode {
+  # if mode indicator wasn't setup by theme, define default
+  if [[ "$NORMAL_INDICATOR" == "" ]]; then
+    NORMAL_INDICATOR="%{$fg[green]%}%{$fg[black]$bg[green]%} NORMAL %{$reset_color%}"
+  fi
+
+  if [[ "$INSERT_INDICATOR" == "" ]]; then
+    INSERT_INDICATOR="%{$fg[white]%}%{$fg[black]$bg[white]%} INSERT %{$reset_color%}"
+  fi
+
+  echo "${${KEYMAP/vicmd/$NORMAL_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
+}
+ 
+function prompt_chris_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info on
+    git-info
+  fi
+
+  # Get ruby information
+  if (( $+functions[ruby-info] )); then
+    ruby-info
+  fi
+
+  prompt_chris_setup
+}
+
+function prompt_chris_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  autoload -Uz add-zsh-hook
+  autoload colors && colors
+
+  add-zsh-hook precmd prompt_chris_precmd
+
+  __PROMPT_CHRIS_COLORS=(
+    "%{$fg_bold[cyan]%}"
+    "%{$fg_bold[yellow]%}"
+    "%{$fg_bold[magenta]%}"
+    "%{$fg_bold[red]%}"
+    "%{$fg_bold[green]%}"
+  )
+
+  # git
+  zstyle ':prezto:module:git:info:branch' format "${__PROMPT_CHRIS_COLORS[1]}%b%f"
+  zstyle ':prezto:module:git:info:added' format "${__PROMPT_CHRIS_COLORS[5]}●%f"
+  zstyle ':prezto:module:git:info:deleted' format "${__PROMPT_CHRIS_COLORS[2]}●%f"
+  zstyle ':prezto:module:git:info:modified' format "${__PROMPT_CHRIS_COLORS[4]}●%f"
+  zstyle ':prezto:module:git:info:untracked' format "${__PROMPT_CHRIS_COLORS[3]}●%f"
+  zstyle ':prezto:module:git:info:stashed' format "${__PROMPT_CHRIS_COLORS[1]}●%f"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' 'on %b%A %d%B%S%a%m%u '
+
+  #VI Mode
+  zstyle ':prezto:module:editor' key-bindings 'vi'
+  zstyle ':prezto:module:editor:info:keymap:primary' format '>>>'
+  zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'INSERT'
+  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format 'O'
+  zstyle ':prezto:module:editor:info:keymap:alternate' format '<<<'
+  zstyle ':prezto:module:editor:info:completing' format '...'
+
+  NEWLINE=$'\n'
+  PROMPT="${__PROMPT_CHRIS_COLORS[2]}%n%f You're in ${__PROMPT_CHRIS_COLORS[3]}%~%f "'$git_info[prompt]'" ${NEWLINE}${__PROMPT_CHRIS_COLORS[5]}$(prompt_char)%f "
+  RPROMPT="$(battery) $editor_info[keymap]"
+}
+
+prompt_chris_setup "$@"
+

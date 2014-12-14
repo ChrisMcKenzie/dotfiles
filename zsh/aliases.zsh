@@ -46,6 +46,10 @@ alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
+hub_path=$(which hub)
+if (( $+commands[hub] )) then
+    alias git=$hub_path
+fi
 alias gs='git status'
 alias gstsh='git stash'
 alias gst='git stash'
@@ -109,6 +113,9 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+pj() { cd $PROJECTS/$1; }
+compctl -W $PROJECTS -/ pj
 
 # Zippin
 alias gz='tar -zcvf'

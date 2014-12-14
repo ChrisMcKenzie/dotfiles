@@ -1,0 +1,11 @@
+#compdef vagrant
+
+local context state line
+typeset -A opt_args
+
+local vagrant_status vagrant_ids
+
+vagrant_status=$(vagrant global-status | head -5)
+vagrant_ids=$(echo $vagrant_status | grep -oE '^[0-9a-z]+' | grep '[0-9]')
+
+_arguments "2:$vagrant_status:($vagrant_ids)"
