@@ -24,4 +24,3 @@ fi
 
 pj() { cd $PROJECTS/$1; }
 compctl -W $PROJECTS -/ pj
-
