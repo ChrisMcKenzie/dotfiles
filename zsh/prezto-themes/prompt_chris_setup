@@ -98,7 +98,7 @@ function prompt_chris_setup {
 
   NEWLINE=$'\n'
   PROMPT="${__PROMPT_CHRIS_COLORS[2]}%n%f You're in ${__PROMPT_CHRIS_COLORS[3]}%~%f "'$git_info[prompt]'" ${NEWLINE}${__PROMPT_CHRIS_COLORS[5]}$(prompt_char)%f "
-  RPROMPT="$(battery) $editor_info[keymap]"
+  RPROMPT="$(battery)"
 }
 
 prompt_chris_setup "$@"
