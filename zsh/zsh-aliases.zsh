@@ -18,7 +18,7 @@ function fn() { ls **/*$1* }
 
 # Git Aliases
 hub_path=$(which hub)
-echo hub_path
+echo $hub_path
 if (( $+commands[hub] )) then
     alias git=$hub_path
 fi
