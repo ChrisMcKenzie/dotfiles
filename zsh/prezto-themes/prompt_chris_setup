@@ -27,7 +27,7 @@ function prompt_char {
 }
 
 function battery {
-  echo `~/.zsh.before/functions/batcharge.py`
+  echo `batcharge.py`
 }
 
 function vi_mode {
