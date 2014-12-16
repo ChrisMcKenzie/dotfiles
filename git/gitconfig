@@ -18,7 +18,7 @@
 
   promote = !$ZSH/bin/git-promote 
   wtf     = !$ZSH/bin/git-wtf
-  rank-contributors = !$ZSH/bin/git-rank-contributors
+  rank = !$ZSH/bin/git-rank-contributors
 
   # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
