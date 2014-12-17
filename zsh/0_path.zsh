@@ -10,6 +10,7 @@ path=(
   $HOME/.yadr/bin
   $HOME/.yadr/bin/yadr
   $HOME/.rvm/bin
+  $HOME/node_modules/.bin
   $GOBIN
 )
 
