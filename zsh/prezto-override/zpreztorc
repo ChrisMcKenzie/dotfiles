@@ -32,6 +32,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'homebrew' \
+  'node' \
   'archive' \
   'fasd' \
   'git' \
@@ -47,7 +49,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -114,10 +116,16 @@ zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 # By default main, brackets, and cursor are enabled.
 zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
-  'brackets' \
   'pattern' \
-  'cursor' \
   'root'
+  # 'brackets' \
+  # 'cursor' \
+
+zstyle ':prezto:module:syntax-highlighting' styles \
+'builtin' 'fg=yellow' \
+'command' 'fg=magenta' \
+'alias' 'fg=blue' \
+'function' 'fg=blue'
 
 #
 # Terminal
