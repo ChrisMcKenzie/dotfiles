@@ -45,7 +45,7 @@ alias ve='vim ~/.vimrc'
 alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
-alias gs='git status'
+alias gs='git status -sb'
 alias gstsh='git stash'
 alias gst='git stash'
 alias gsp='git stash pop'
