@@ -4,6 +4,13 @@
 # Disable menu bar transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
+# disable side swipe gesture
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+#disable dashboard 
+defaults write com.apple.dashboard mcx-disabled -boolean true
+defaults write com.apple.dock dashboard-in-overlay -bool true
+
 # Show remaining battery time; hide percentage
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.menuextra.battery ShowTime -string "YES"
@@ -102,7 +109,7 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -130,7 +137,7 @@ chflags nohidden ~/Library
 
 # # Hot corners
 # # Top left screen corner → Mission Control
-# defaults write com.apple.dock wvous-tl-corner -int 2
+# defaults write com.ap`ple.dock wvous-tl-corner -int 2
 # defaults write com.apple.dock wvous-tl-modifier -int 0
 # # Top right screen corner → Desktop
 # defaults write com.apple.dock wvous-tr-corner -int 4
@@ -175,7 +182,7 @@ defaults write com.apple.dock itunes-notifications -bool true
 #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture disable-shadow -bool false
 
 # Disable Safari’s thumbnail cache for History and Top Sites
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
