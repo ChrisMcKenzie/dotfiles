@@ -181,7 +181,7 @@ defaults write com.apple.dock itunes-notifications -bool true
 # Add a spacer to the right side of the Dock (where the Trash is)
 #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
-# Disable shadow in screenshots
+# Enable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool false
 
 # Disable Safari’s thumbnail cache for History and Top Sites

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+url=$1
+dir=${url#*//}
+full_path=$GOPATH/src/$dir
+project=${dir#*/}
+name=${project#*/}
+
+txtbld=$(tput bold)
+bldblu=${txtbld}$(tput setaf 4)
+bldyel=${txtbld}$(tput setaf 3)
+txtrst=$(tput sgr0)
+
+if [ -n "$url" ] 
+then
+  echo "Getting $project" 
+  git clone $url $full_path
+  ln -s $full_path $PROJECTS/$name
+else
+  cat <<- EOF
+
+  ${bldblu}`basename $0`${txtrst} ${bldyel}[URL]${txtrst}
+
+  Clone go project to GOPATH and link it to PROJECTS directory
+  
+EOF
+fi

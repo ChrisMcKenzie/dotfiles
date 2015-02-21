@@ -1,6 +1,6 @@
 export PROMPT_CHAR
 
-promptchar_zsh='●' # the % character is special in zsh - escape with a preceding %
+promptchar_zsh='●'
 promptchar_git='±'
 promptchar_hg='☿'
 #############################################
@@ -30,18 +30,18 @@ function battery {
   echo `batcharge.py`
 }
 
-function vi_mode {
-  # if mode indicator wasn't setup by theme, define default
-  if [[ "$NORMAL_INDICATOR" == "" ]]; then
-    NORMAL_INDICATOR="%{$fg[green]%}%{$fg[black]$bg[green]%} NORMAL %{$reset_color%}"
-  fi
+# function vi_mode {
+#   # if mode indicator wasn't setup by theme, define default
+#   if [[ "$NORMAL_INDICATOR" == "" ]]; then
+#     NORMAL_INDICATOR="%{$fg[green]%}%{$fg[black]$bg[green]%} NORMAL %{$reset_color%}"
+#   fi
 
-  if [[ "$INSERT_INDICATOR" == "" ]]; then
-    INSERT_INDICATOR="%{$fg[white]%}%{$fg[black]$bg[white]%} INSERT %{$reset_color%}"
-  fi
+#   if [[ "$INSERT_INDICATOR" == "" ]]; then
+#     INSERT_INDICATOR="%{$fg[white]%}%{$fg[black]$bg[white]%} INSERT %{$reset_color%}"
+#   fi
 
-  echo "${${KEYMAP/vicmd/$NORMAL_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
-}
+#   echo "${${KEYMAP/vicmd/$NORMAL_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
+# }
  
 function prompt_chris_precmd {
   setopt LOCAL_OPTIONS
@@ -51,11 +51,6 @@ function prompt_chris_precmd {
   if (( $+functions[git-info] )); then
     git-info on
     git-info
-  fi
-
-  # Get ruby information
-  if (( $+functions[ruby-info] )); then
-    ruby-info
   fi
 
   prompt_chris_setup
@@ -89,15 +84,15 @@ function prompt_chris_setup {
   zstyle ':prezto:module:git:info:keys' format 'prompt' 'on %b%A %d%B%S%a%m%u '
 
   #VI Mode
-  zstyle ':prezto:module:editor' key-bindings 'vi'
-  zstyle ':prezto:module:editor:info:keymap:primary' format '>>>'
-  zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'INSERT'
-  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format 'O'
-  zstyle ':prezto:module:editor:info:keymap:alternate' format '<<<'
-  zstyle ':prezto:module:editor:info:completing' format '...'
+  # zstyle ':prezto:module:editor' key-bindings 'vi'
+  # zstyle ':prezto:module:editor:info:keymap:primary' format '>>>'
+  # zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'INSERT'
+  # zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format 'O'
+  # zstyle ':prezto:module:editor:info:keymap:alternate' format '<<<'
+  # zstyle ':prezto:module:editor:info:completing' format '...'
 
   NEWLINE=$'\n'
-  PROMPT="${__PROMPT_CHRIS_COLORS[2]}%n%f You're in ${__PROMPT_CHRIS_COLORS[3]}%~%f "'$git_info[prompt]'" ${NEWLINE}${__PROMPT_CHRIS_COLORS[5]}$(prompt_char)%f "
+  PROMPT="${__PROMPT_CHRIS_COLORS[2]}%n%f in ${__PROMPT_CHRIS_COLORS[3]}%d%f "'$git_info[prompt]'" ${NEWLINE}${__PROMPT_CHRIS_COLORS[5]}$(prompt_char)%f "
   RPROMPT="$(battery)"
 }
 

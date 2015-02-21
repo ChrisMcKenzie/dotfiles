@@ -11,6 +11,7 @@ path=(
   $HOME/.yadr/bin/yadr
   $HOME/.rvm/bin
   $HOME/node_modules/.bin
+  $HOME/Library/Android/sdk/platform-tools/
   $GOBIN
 )
 

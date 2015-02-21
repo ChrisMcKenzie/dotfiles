@@ -39,6 +39,7 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'osx' \
   'ruby' \
+  'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
@@ -133,11 +134,13 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 
 # Auto set the tab and window titles.
 zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 #
 # Tmux
 #
 
 # Auto start a session when Zsh is launched.
-zstyle ':prezto:module:tmux' auto-start 'yes'
+# zstyle ':prezto:module:tmux' auto-start 'yes'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
 

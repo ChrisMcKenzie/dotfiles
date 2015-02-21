@@ -58,6 +58,11 @@
   # pull
   pl = pull                         # pull
 
+  #pull with theirs strategy
+  pull-thiers = pull -s recursive -X thiers
+
+  go = !git-clone-go #clone repo to GOPATH
+
   # push
   ps = push                         # push
 
@@ -110,7 +115,7 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = tracking
+	default = simple
 [core]
   autocrlf = false
   editor = vim
@@ -128,3 +133,7 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[url "git@github.com:the-control-group/"]
+	insteadOf = https://github.com/the-control-group/
