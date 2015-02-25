@@ -26,10 +26,6 @@ function prompt_char {
   echo $promptchar_zsh
 }
 
-function battery {
-  echo `batcharge.py`
-}
-
 # function vi_mode {
 #   # if mode indicator wasn't setup by theme, define default
 #   if [[ "$NORMAL_INDICATOR" == "" ]]; then
@@ -93,7 +89,7 @@ function prompt_chris_setup {
 
   NEWLINE=$'\n'
   PROMPT="${__PROMPT_CHRIS_COLORS[2]}%n%f in ${__PROMPT_CHRIS_COLORS[3]}%d%f "'$git_info[prompt]'" ${NEWLINE}${__PROMPT_CHRIS_COLORS[5]}$(prompt_char)%f "
-  RPROMPT="$(battery)"
+  RPROMPT="${__PROMPT_CHRIS_COLORS[3]}$(battery)"
 }
 
 prompt_chris_setup "$@"

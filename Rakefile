@@ -20,6 +20,7 @@ task :install => [:submodule_init, :submodules] do
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+  file_operation(Dir.glob('profanity/*')) if want_to_install?('profanity xmpp chat.')
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
@@ -173,6 +174,7 @@ def install_homebrew
   puts "======================================================"
   run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ngrok node}
   run %{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
+  run %{brew install profanity --with-terminal-notifier}
   puts
   puts
 end

@@ -114,6 +114,7 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 # Zippin
 alias gz='tar -zcvf'
 
+alias battery="~/.yadr/bin/battery.sh Charging; ~/.yadr/bin/battery.sh Discharging"
 # Ruby
 alias c='rails c' # Rails 3
 alias co='script/console --irb=pry' # Rails 2
