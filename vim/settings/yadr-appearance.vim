@@ -28,5 +28,5 @@ else
 
 endif
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme base16-eighties
 set background=dark

@@ -1,16 +1,31 @@
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'default',
       \ 'active': {
-      \   'left': [ [ 'mode' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'filename', 'modified', 'readonly'] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
       \ },
-      \ 'component_visible_condition': {
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ 'component_function': {
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
+
+function! MyReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return ""
+  else 
+    return ""
+  endif
+endfunction
+
+function! MyFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '  '._ : ''
+  endif
+endfunction

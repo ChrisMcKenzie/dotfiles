@@ -4,7 +4,7 @@ TMUX_SEG_MAILCOUNT_MAILDIR_INBOX_DEFAULT="$HOME/.mail/inbox/new"
 TMUX_SEG_MAILCOUNT_MBOX_INBOX_DEFAULT="${MAIL}"
 TMUX_SEG_MAILCOUNT_MAILCHECKRC_DEFAULT="${HOME}/.mailcheckrc"
 TMUX_SEG_MAILCOUNT_GMAIL_SERVER_DEFAULT="gmail.com"
-TMUX_SEG_MAILCOUNT_GMAIL_INTERVAL_DEFAULT=".1"
+TMUX_SEG_MAILCOUNT_GMAIL_INTERVAL_DEFAULT="1"
 
 generate_segmentrc() {
   read -d '' rccontents  << EORC
@@ -89,7 +89,7 @@ run_gmail() {
     count="0"
   fi
 
-  echo "#[fg=colour255 bg=red] ✉︎ ${count} #[fg=default bg=default]"
+  echo "#[fg=colour255 bg=red]  ${count} #[fg=default bg=default]"
 }
 
 

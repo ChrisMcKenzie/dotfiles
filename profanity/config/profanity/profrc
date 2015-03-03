@@ -1,13 +1,29 @@
 [ui]
 splash=false
 vercheck=false
-occupants=false
+occupants=true
 theme=chris
 
 mouse=true
 
 statuses.console=none
-statuses.muc=all
+statuses.muc=none
+
+beep=false
+flash=false
+wrap=true
+time=minutes
+statuses.chat=none
+occupants.size=15
+roster=true
+roster.offline=true
+roster.resource=true
+roster.by=presence
+roster.size=25
+privileges=true
+presence=true
+intype=true
+otr.warn=true
 
 [colours]
 bkgnd=default

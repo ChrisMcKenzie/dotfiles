@@ -1,5 +1,5 @@
-Bundle "chrisbra/color_highlight.git"
-Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle "chrisbra/color_highlight"
+Bundle "chriskempson/base16-vim"
 Bundle "itchyny/lightline.vim"
 Bundle "jby/tmux.vim.git"
 Bundle "morhetz/gruvbox"

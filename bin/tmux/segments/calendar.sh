@@ -2,7 +2,7 @@
 TMUX_SEG_CALENDAR_INTERVAL=10
 
 run_calendar(){
-  let interval=60*.02
+  let interval=60*1
   let interval=0
   if shell_is_osx || shell_is_bsd; then
     last_update=$(stat -f "%m" ${tmp_file})

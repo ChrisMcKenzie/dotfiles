@@ -63,11 +63,11 @@ function prompt_chris_setup {
   add-zsh-hook precmd prompt_chris_precmd
 
   __PROMPT_CHRIS_COLORS=(
-    "%{$fg_bold[cyan]%}"
-    "%{$fg_bold[yellow]%}"
-    "%{$fg_bold[magenta]%}"
-    "%{$fg_bold[red]%}"
-    "%{$fg_bold[green]%}"
+    "%{$fg_no_bold[cyan]%}"
+    "%{$fg_no_bold[yellow]%}"
+    "%{$fg_no_bold[magenta]%}"
+    "%{$fg_no_bold[red]%}"
+    "%{$fg_no_bold[green]%}"
   )
 
   # git
