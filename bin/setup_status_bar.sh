@@ -1,4 +1,9 @@
 set -e
+
+if [ -e ~/.secrets ]; then
+  source ~/.secrets
+fi
+
 export TMUX_DIR_HOME="$(dirname $0)"
 export TMUX_DIR_SEGMENTS=${TMUX_DIR_HOME}/tmux/segments
 export TMUX_DIR_TEMPORARY="/tmp/tmux-powerline_${USER}"
@@ -51,7 +56,7 @@ __wan_ip(){
 }
 
 run_github(){
-  echo "#[bg=blue fg=colour255]  $(~/.yadr/bin/github-notifications) "
+  echo "#[bg=blue fg=colour255]  $(~/.yadr/bin/github-notifications -token=$GITHUB_TOKEN) "
 }
 
 run_date(){
