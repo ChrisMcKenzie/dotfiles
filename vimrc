@@ -11,6 +11,7 @@ endif
 " ================ General Config ====================
 
 set number                      "Line numbers are good
+set relativenumber              "Relative Line numbers are better
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -98,7 +99,7 @@ set wildignore+=*.png,*.jpg,*.gif
 "
 " ================ Scrolling ========================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set scrolloff=2         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 :let g:session_autoload = 'no'

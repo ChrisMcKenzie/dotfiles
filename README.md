@@ -29,7 +29,7 @@ Please use GitHub Issues for pull requests or bug reports only.
 
 ## Screenshot
 
-![screenshot](http://i.imgur.com/3C1Ze.png)
+![screenshot](http://share.chrismckenzie.io/Monosnap_2015-03-06_15-11-54.png)
 
 ## Installation
 
