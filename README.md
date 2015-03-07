@@ -21,12 +21,6 @@
   * Many zsh plugins, starting with the wonderful Prezto base, and adding a few niceties on top.
   * All things are vimized: irb, postres command line, etc.
 
-## Mailing List
-
-Got questions, concerns, want to hear announcements? Join the [Google Group](https://groups.google.com/forum/#!forum/yadr-users)
-
-Please use GitHub Issues for pull requests or bug reports only.
-
 ## Screenshot
 
 ![screenshot](http://share.chrismckenzie.io/Monosnap_2015-03-06_15-11-54.png)
@@ -48,23 +42,8 @@ sh -c "`curl -fsSL https://raw.github.com/chrismckenzie/dotfiles/master/install.
 
 ## Wait, you're not done! Do this:
 
-* **Install iTerm Solarized Colors** - YADR will install Solarized colorschemes into your iTerm. Go to Profiles => Colors => Load Presets to pick Solarized Dark.
-* [Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html) - The escape key is the single most used key in vim.  Old keyboards used to have Escape where Tab is today. Apple keyboards are the worst with their tiny Esc keys. But all this is fixed by remapping Caps to Escape.  If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
-* Remap your Alfred or Spotlight to `Ctrl-Cmd-Space`, so that you can use `Cmd-Space` to autocomplete in vim. This is much more friendly for your fingers than `Ctrl-n`.
 * Set up a system wide hotkey for iTerm (Keys=>Hotkey). Recommended Cmd-Escape, which is really Cmd-Capslock.
 * In iTerm, uncheck "Use Lion-style full screen" on General; in MacVim, uncheck Prefer native fullscreen under Advanced settings. This will give you fast full screen windows that are switchable without switching to spaces.
-
-## If you want to run vim in terminal
-
-* Make sure you install Solarized colorscheme in your terminal!
-* If you don't want to use solarized terminal, then make sure you do this:
-
-      let g:yadr_using_unsolarized_terminal = 1
-      # in ~/.vimrc.before
-
-* If you want to use an alternate colorcheme like Gruvbox, then in your `~/.vimrc.after` do:
-
-      let g:yadr_disable_solarized_enhancements = 1
 
 ### Upgrading
 
