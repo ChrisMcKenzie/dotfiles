@@ -64,7 +64,7 @@ function prompt_chris_setup {
 
   __PROMPT_CHRIS_COLORS=(
     "%{$fg_no_bold[cyan]%}"
-    "%{$fg_no_bold[yellow]%}"
+    "%{$fg[yellow]%}"
     "%{$fg_no_bold[magenta]%}"
     "%{$fg_no_bold[red]%}"
     "%{$fg_no_bold[green]%}"
