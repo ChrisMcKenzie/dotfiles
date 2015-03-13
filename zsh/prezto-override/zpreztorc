@@ -107,7 +107,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 # Set ssh-agent identities to load.
-# zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
 
 #
 # Syntax Highlighting
@@ -143,4 +143,3 @@ zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 # Auto start a session when Zsh is launched.
 # zstyle ':prezto:module:tmux' auto-start 'yes'
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
-

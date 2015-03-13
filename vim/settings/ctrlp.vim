@@ -1,3 +1,4 @@
+set rtp+=/usr/local/Cellar/fzf/0.9.3
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif

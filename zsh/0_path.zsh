@@ -3,8 +3,7 @@
 export GOPATH=$HOME/gocode
 export GOBIN=$GOPATH/bin
 export PROJECTS=$HOME/Projects
-export DOCKER_HOST="tcp://$(boot2docker ip 2>/dev/null):2375";
-
+eval $(boot2docker shellinit 2>/dev/null)
 path=(
   $path
   $HOME/.yadr/bin
