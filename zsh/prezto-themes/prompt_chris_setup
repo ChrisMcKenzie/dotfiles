@@ -26,19 +26,6 @@ function prompt_char {
   echo $promptchar_zsh
 }
 
-# function vi_mode {
-#   # if mode indicator wasn't setup by theme, define default
-#   if [[ "$NORMAL_INDICATOR" == "" ]]; then
-#     NORMAL_INDICATOR="%{$fg[green]%}%{$fg[black]$bg[green]%} NORMAL %{$reset_color%}"
-#   fi
-
-#   if [[ "$INSERT_INDICATOR" == "" ]]; then
-#     INSERT_INDICATOR="%{$fg[white]%}%{$fg[black]$bg[white]%} INSERT %{$reset_color%}"
-#   fi
-
-#   echo "${${KEYMAP/vicmd/$NORMAL_INDICATOR}/(main|viins)/$INSERT_INDICATOR}"
-# }
-
 function zle-line-init zle-keymap-select {
    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
@@ -89,16 +76,8 @@ function prompt_chris_setup {
   zstyle ':prezto:module:git:info:deleted' format "${__PROMPT_CHRIS_COLORS[2]}●%f"
   zstyle ':prezto:module:git:info:modified' format "${__PROMPT_CHRIS_COLORS[4]}●%f"
   zstyle ':prezto:module:git:info:untracked' format "${__PROMPT_CHRIS_COLORS[3]}●%f"
-  zstyle ':prezto:module:git:info:stashed' format "${__PROMPT_CHRIS_COLORS[1]}●%f"
+  zstyle ':prezto:module:git:info:stashed' format "${__PROMPT_CHRIS_COLORS[2]}●%f"
   zstyle ':prezto:module:git:info:keys' format 'prompt' 'on %b%A %d%B%S%a%m%u '
-
-  #VI Mode
-  zstyle ':prezto:module:editor' key-bindings 'vi'
-  zstyle ':prezto:module:editor:info:keymap:primary' format ''
-  zstyle ':prezto:module:editor:info:keymap:primary:insert' format 'INSERT'
-  zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format 'REPLACE'
-  zstyle ':prezto:module:editor:info:keymap:alternate' format '<'
-  zstyle ':prezto:module:editor:info:completing' format '...'
 
   NEWLINE=$'\n'
   PROMPT="${__PROMPT_CHRIS_COLORS[2]}%n%f in ${__PROMPT_CHRIS_COLORS[3]}%d%f "'$git_info[prompt]'" ${NEWLINE}${__PROMPT_CHRIS_COLORS[5]}$(prompt_char)%f "
