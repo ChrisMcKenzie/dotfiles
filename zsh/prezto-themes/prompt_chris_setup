@@ -1,3 +1,4 @@
+# vim: ft=zsh
 export PROMPT_CHAR
 
 promptchar_zsh='●'

@@ -1,3 +1,6 @@
+# Shell Configuration
+# vi: sw=8 ts=8 noet
+
 set -e
 
 if [ -e ~/.secrets ]; then
@@ -8,18 +11,12 @@ export TMUX_DIR_HOME="$(dirname $0)"
 export TMUX_DIR_SEGMENTS=${TMUX_DIR_HOME}/tmux/segments
 export TMUX_DIR_TEMPORARY="/tmp/tmux-powerline_${USER}"
 
-export TMUX_SEG_MAILCOUNT_GMAIL_USERNAME="theunilife"
-# export TMUX_SEG_MAILCOUNT_GMAIL_PASSWORD="4dv3ntur3"
-export TMUX_SEG_MAILCOUNT_MAILBOX_TYPE="gmail"
-
 export TMUX_POWERLINE_SEG_WEATHER_LOCATION="2487889"
 
 if [ ! -d "$TMUX_DIR_TEMPORARY" ]; then
   mkdir -p "$TMUX_DIR_TEMPORARY"
 fi
 
-# Shell Configuration
-# vi: sw=8 ts=8 noet
 
 ostype() { echo $OSTYPE | tr '[A-Z]' '[a-z]'; }
 
@@ -45,10 +42,8 @@ source "${TMUX_DIR_HOME}/tmux/segments/mail.sh"
 source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
 source "${TMUX_DIR_HOME}/tmux/segments/calendar.sh"
 
-
-# echo "got here"
 __lan_ip(){
-  echo "#[fg=blue bg=colour255]  #[fg=colour236]$(ifconfig en0 | grep 'inet ' | awk '{print $2}')"
+  echo "#[fg=blue bg=colour255]  #[fg=colour236]$(ifconfig en0 | grep 'inet ' | awk '{print $2}') "
 }
 
 __wan_ip(){

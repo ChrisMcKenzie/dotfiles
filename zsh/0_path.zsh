@@ -1,9 +1,5 @@
 # path, the 0 in the filename causes this to load first
-
-export GOPATH=$HOME/gocode
-export GOBIN=$GOPATH/bin
-export PROJECTS=$HOME/Projects
-eval $(boot2docker shellinit 2>/dev/null)
+export GOBIN=$HOME/gocode/bin
 path=(
   $path
   $HOME/.yadr/bin
@@ -13,6 +9,10 @@ path=(
   $HOME/Library/Android/sdk/platform-tools/
   $GOBIN
 )
+export GOPATH=$HOME/gocode
+export PROJECTS=$HOME/Projects
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
