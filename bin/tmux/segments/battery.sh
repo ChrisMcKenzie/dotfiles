@@ -9,5 +9,5 @@ print_battery(){
   else
     power="🔌"
   fi
-  echo "#[bg=brightred fg=colour255] ${HEART_FULL} $(battery_charge)% ${power} "
+  echo "#[bg=brightred fg=colour255] $(battery_charge)% ${power} "
 }

@@ -1,5 +1,5 @@
 # Shell Configuration
-# vi: sw=8 ts=8 noet
+# vim: noai:sw=2:ts=2
 
 set -e
 
@@ -38,9 +38,9 @@ export -f shell_is_bsd
 
 source "${TMUX_DIR_HOME}/tmux/segments/now_playing.sh"
 source "${TMUX_DIR_HOME}/tmux/segments/battery.sh"
-source "${TMUX_DIR_HOME}/tmux/segments/mail.sh"
-source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
-source "${TMUX_DIR_HOME}/tmux/segments/calendar.sh"
+# source "${TMUX_DIR_HOME}/tmux/segments/mail.sh"
+# source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
+# source "${TMUX_DIR_HOME}/tmux/segments/calendar.sh"
 
 __lan_ip(){
   echo "#[fg=blue bg=colour255]  #[fg=colour236]$(ifconfig en0 | grep 'inet ' | awk '{print $2}') "
@@ -51,15 +51,16 @@ __wan_ip(){
 }
 
 run_github(){
-  echo "#[bg=blue fg=colour255]  $(~/.yadr/bin/github-notifications -token=$GITHUB_TOKEN) "
+	# echo "#[bg=blue fg=colour255]  D "
+	[[ -n $DISABLE_POLLING ]] && echo "#[bg=blue fg=colour255]  $(~/.yadr/bin/github-notifications -token=$GITHUB_TOKEN) "
 }
 
 run_date(){
-  echo "#[bg=blue fg=colour255]  $(date +"%a %b %d %H:%M%p") "
+  echo "#[bg=blue fg=colour255]  $(date +"%a %b %d %I:%M%p") "
 }
 
 function in_git_repo {
-  git branch > /dev/null 2>&1 && return
+	git branch > /dev/null 2>&1 && return
   return 1
 }
 
@@ -70,7 +71,7 @@ run_git(){
 }
 
 if [ "$1" == 'left' ]; then
-  echo "$(run_git) $(run_github)$(__lan_ip)"
+  echo "$(run_git) $(run_github)"
 elif [ "$1" == 'right' ]; then
   echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"
 fi

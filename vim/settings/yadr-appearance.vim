@@ -13,9 +13,9 @@ if has("gui_running")
   set columns=190
 
   if has("gui_gtk2")
-    set guifont=Monaco\ 26
+    set guifont=Monaco\ 18
   else
-    set guifont=Monaco:h26
+    set guifont=Monaco:h18
   end
 else
   let g:CSApprox_loaded = 1
@@ -28,5 +28,12 @@ else
 
 endif
 
-colorscheme base16-tomorrow
-set background=dark
+hi clear CursorLine
+augroup CLClear
+    autocmd! ColorScheme * hi clear CursorLine
+augroup END
+
+hi CursorLineNR cterm=bold
+augroup CLNRSet
+    autocmd! ColorScheme * hi CursorLineNR cterm=bold ctermfg=LightBlue
+augroup END

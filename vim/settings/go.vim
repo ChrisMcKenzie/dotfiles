@@ -6,6 +6,10 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_auto_type_info = 0
+
+" set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " BASIC MAPPINGS
 au FileType go nmap <leader>r <Plug>(go-run)

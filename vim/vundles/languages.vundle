@@ -17,3 +17,4 @@ Bundle "fatih/vim-go"
 Bundle "bendavis78/vim-polymer"
 Bundle "othree/html5.vim"
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'isRuslan/vim-es6'

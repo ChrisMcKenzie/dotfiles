@@ -137,3 +137,7 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[http "https://git.cs.tcg.tools"]
+	sslCAInfo = /Users/chrism/.flynn/ca-certs/default.pem
+[credential "https://git.cs.tcg.tools"]
+	helper = /usr/local/bin/flynn git-credentials

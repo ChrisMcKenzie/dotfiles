@@ -133,8 +133,8 @@ __get_condition_symbol() {
       fi
       ;;
     "rain" | "mixed rain and snow" | "mixed rain and sleet" | "freezing drizzle" | "drizzle" | "light drizzle" | "freezing rain" | "showers" | "mixed rain and hail" | "scattered showers" | "isolated thundershowers" | "thundershowers" | "light rain with thunder" | "light rain" | "rain and snow")
-      #echo "☂"
-      echo "☔"
+      echo "☂"
+      # echo "☔"
       ;;
     "snow" | "mixed snow and sleet" | "snow flurries" | "light snow showers" | "blowing snow" | "sleet" | "hail" | "heavy snow" | "scattered snow showers" | "snow showers" | "light snow" | "snow/windy" | "snow grains" | "snow/fog")
       #echo "☃"
@@ -145,8 +145,8 @@ __get_condition_symbol() {
       echo "☁︎"
       ;;
     "tornado" | "tropical storm" | "hurricane" | "severe thunderstorms" | "thunderstorms" | "isolated thunderstorms" | "scattered thunderstorms")
-      echo "⚡"
-      # echo "☈"
+      # echo "⚡"
+      echo "☈"
       ;;
     "dust" | "foggy" | "fog" | "haze" | "smoky" | "blustery" | "mist")
       #echo "♨"
