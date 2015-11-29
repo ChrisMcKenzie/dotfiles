@@ -71,7 +71,9 @@ run_git(){
 }
 
 if [ "$1" == 'left' ]; then
-  echo "$(run_git) $(run_github)"
+  # echo "$(run_git) $(run_github)"
+  echo "$(run_git) "
 elif [ "$1" == 'right' ]; then
-  echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"
+  # echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"
+  # echo "#[fg=white] $(run_date)"
 fi

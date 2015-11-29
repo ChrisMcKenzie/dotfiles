@@ -16,13 +16,18 @@ else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
+
+let g:ctrlp_working_path_mode = 2 " Smart path mode
+let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
+let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
+
 " Default to filename searches - so that appctrl will find application
 " controller
-let g:ctrlp_by_filename = 2
+" let g:ctrlp_by_filename = 2
 
 " Don't jump to already open window. This is annoying if you are maintaining
 " several Tab workspaces and want to open two windows into the same file.
-let g:ctrlp_switch_buffer = 2
+" let g:ctrlp_switch_buffer = 2
 
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)

@@ -7,6 +7,21 @@ set colorcolumn=80
 set numberwidth=4
 set completeopt=menu
 
+let g:deoplete#enable_at_startup = 1
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Relative numbers when not in insert mode
+" au BufEnter * :set rnu
+" au BufLeave * :set nu
+" au WinEnter * :set rnu
+" au WinLeave * :set nu
+" au InsertEnter * :set nu
+" au InsertLeave * :set rnu
+au FocusLost * :set nu
+au FocusGained * :set rnu
 " hi VertSplit term=NONE ctermfg=11 ctermbg=11 guifg=#515151 guibg=#000000
 " hi ColorColumn ctermbg=11 ctermfg=black
 

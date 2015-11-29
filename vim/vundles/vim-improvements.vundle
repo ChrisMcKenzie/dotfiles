@@ -1,7 +1,6 @@
 Bundle "AndrewRadev/splitjoin.vim"
 Bundle "Raimondi/delimitMate"
-Bundle "Shougo/neocomplete.git"
-Bundle "briandoll/change-inside-surroundings.vim.git"
+Bundle "briandoll/change-insnide-surroundings.vim.git"
 Bundle "godlygeek/tabular"
 Bundle "tomtom/tcomment_vim.git"
 Bundle "vim-scripts/camelcasemotion.git"
