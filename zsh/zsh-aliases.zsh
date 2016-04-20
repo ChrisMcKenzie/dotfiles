@@ -24,3 +24,6 @@ fi
 
 pj() { cd $PROJECTS/$1; }
 compctl -W $PROJECTS -/ pj
+
+mygo () { cd $GOPATH/src/github.com/chrismckenzie/$1; }
+compctl -W $GOPATH/src/github.com/chrismckenzie -/ mygo

@@ -62,6 +62,7 @@ alias gsh='git show'
 alias gshw='git show'
 alias gshow='git show'
 alias gi='vim .gitignore'
+alias gc='git commit -S --verbose'
 alias gcm='git ci -m'
 alias gcim='git ci -m'
 alias gci='git ci'
@@ -122,13 +123,6 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 alias gz='tar -zcvf'
 
 alias battery="~/.yadr/bin/battery.sh Charging; ~/.yadr/bin/battery.sh Discharging"
-# Ruby
-alias c='rails c' # Rails 3
-alias co='script/console --irb=pry' # Rails 2
-alias ts='thin start'
-alias ms='mongrel_rails start'
-alias tfdl='tail -f log/development.log'
-alias tftl='tail -f log/test.log'
 
 alias ka9='killall -9'
 alias k9='kill -9'
@@ -144,27 +138,6 @@ alias todo='open nvalt://find/todo'
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
-
-# Zeus
-alias zs='zeus server'
-alias zc='zeus console'
-
-# Rspec
-alias rs='rspec spec'
-alias sr='spring rspec'
-alias src='spring rails c'
-alias srgm='spring rails g migration'
-alias srdm='spring rake db:migrate'
-alias srdt='spring rake db:migrate'
-alias srdmt='spring rake db:migrate db:test:prepare'
-
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-alias sp='sprintly'
-# spb = sprintly branch - create a branch automatically based on the bug you're working on
-alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
-
 alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
@@ -173,3 +146,7 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias v='vagrant'
+alias dc='docker-compose'
+alias up='docker-compose up -d'
+
+alias updateservicectl="updateservicectl -user chris.mckenzie@thecontrolgroup.com -key 5dd785f275c2b61559d403db953de8d7 -server https://thecontrolgroup.update.core-os.net/"

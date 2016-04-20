@@ -38,7 +38,6 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'git' \
   'osx' \
-  'ruby' \
   'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \

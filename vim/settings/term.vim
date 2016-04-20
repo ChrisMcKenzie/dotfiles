@@ -1,4 +1,6 @@
 " these setting are for neovim terminal mode
+nnoremap ts :split \| term <CR>
+nnoremap tv :vsplit \| term <CR>
 
 " map exit terminal mode to escape key
 tnoremap <Esc> <C-\><C-n>

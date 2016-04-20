@@ -2,4 +2,4 @@
 autoload promptinit
 fpath=($HOME/.yadr/zsh/prezto-themes $HOME/.zsh.prompts $fpath)
 promptinit
-eval $(docker-machine env 2>/dev/null)
+# eval $(docker-machine env 2>/dev/null)

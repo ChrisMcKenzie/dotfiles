@@ -1,0 +1,3 @@
+dotfiles () {
+  vim $PROJECTS/dotfiles/
+}

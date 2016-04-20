@@ -15,12 +15,8 @@ task :install => [:submodule_init, :submodules] do
 
   # this has all the runcoms from this directory.
   file_operation(Dir.glob('git/*')) if want_to_install?('git configs (color, aliases)')
-  file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
-  file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
-  file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
-  file_operation(Dir.glob('profanity/*')) if want_to_install?('profanity xmpp chat.')
   if want_to_install?('vim configuration (highly recommended)')
     file_operation(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
@@ -31,8 +27,6 @@ task :install => [:submodule_init, :submodules] do
   install_fonts if RUBY_PLATFORM.downcase.include?("darwin")
 
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
-
-  run_bundle_config
 
   success_msg("installed")
 end

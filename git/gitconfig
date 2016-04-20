@@ -30,11 +30,11 @@
   b = branch -v                     # branch (verbose)
 
   # commit
-  c = commit -m                     # commit with message
-  ca = commit -am                   # commit all with message
-  ci = commit                       # commit
-  amend = commit --amend            # ammend your last commit
-  ammend = commit --amend           # ammend your last commit
+  c = commit -S -m                     # commit with message
+  ca = commit -S -am                   # commit all with message
+  ci = commit -S                       # commit
+  amend = commit -S --amend            # ammend your last commit
+  ammend = commit -S --amend           # ammend your last commit
 
   # checkout
   co = checkout                     # checkout
@@ -59,7 +59,7 @@
   pl = pull                         # pull
 
   #pull with theirs strategy
-  pull-thiers = pull -s recursive -X thiers
+  pull-theirs = pull -s recursive -X theirs
 
   go = !git-clone-go #clone repo to GOPATH
 
@@ -118,7 +118,7 @@
   default = simple
 [core]
   autocrlf = false
-  editor = vim
+  editor = nvim
   excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false
@@ -141,3 +141,5 @@
 	sslCAInfo = /Users/chrism/.flynn/ca-certs/default.pem
 [credential "https://git.cs.tcg.tools"]
 	helper = /usr/local/bin/flynn git-credentials
+[user]
+	signingkey = EE4AF575
