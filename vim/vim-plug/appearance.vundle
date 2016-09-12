@@ -1,0 +1,3 @@
+Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'keith/tmux.vim'

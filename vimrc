@@ -29,7 +29,7 @@ set hidden
 syntax on
 
 " Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
+" That means all \x commands turn into `x
 " The mapleader has to be set before vundle starts loading all 
 " the plugins.
 let mapleader="`"
@@ -37,8 +37,12 @@ let mapleader="`"
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+"if filereadable(expand("~/.vim/vundles.vim"))
+"  source ~/.vim/vundles.vim
+"endif
+
+if filereadable(expand("~/.vim/vim-plug.vim"))
+  source ~/.vim/vim-plug.vim
 endif
 
 " ================ Turn Off Swap Files ==============
@@ -99,7 +103,7 @@ set wildignore+=*.png,*.jpg,*.gif
 "
 " ================ Scrolling ========================
 
-set scrolloff=2         "Start scrolling when we're 8 lines away from margins
+set scrolloff=2         "Start scrolling when we're 2 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 :let g:session_autoload = 'no'

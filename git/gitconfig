@@ -61,8 +61,6 @@
   #pull with theirs strategy
   pull-theirs = pull -s recursive -X theirs
 
-  go = !git-clone-go #clone repo to GOPATH
-
   # push
   ps = push                         # push
 

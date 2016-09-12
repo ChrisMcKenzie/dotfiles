@@ -3,8 +3,6 @@
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 
-compctl -g '~/.teamocil/*(:t:r)' teamocil
-
 # YADR support
 alias yav='yadr vim-add-plugin'
 alias ydv='yadr vim-delete-plugin'
@@ -39,11 +37,6 @@ NEOVIM_INSTALLED=$?
 if [ $NEOVIM_INSTALLED -eq 0 ]; then
   alias vim="nvim"
 fi
-# mvim --version > /dev/null 2>&1
-# MACVIM_INSTALLED=$?
-# if [ $MACVIM_INSTALLED -eq 0 ]; then
-#   alias vim="mvim -v"
-# fi
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
@@ -150,3 +143,5 @@ alias dc='docker-compose'
 alias up='docker-compose up -d'
 
 alias updateservicectl="updateservicectl -user chris.mckenzie@thecontrolgroup.com -key 5dd785f275c2b61559d403db953de8d7 -server https://thecontrolgroup.update.core-os.net/"
+
+alias chrome="open -a \"/Applications/Google Chrome.app\""

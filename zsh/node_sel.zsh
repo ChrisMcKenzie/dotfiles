@@ -1,5 +1,5 @@
 __nsel(){
-  ssh "$(command curl -s -XGET "http://consul.service.iad.consul:8500/v1/catalog/nodes" | \
+  ssh "$(command curl -s -XGET "$CONSUL_HOST/v1/catalog/nodes" | \
     jq '.[] | [.Node, .Address] | join(",")' | \
     sed 's/"//g' | \
     column -t -s, | \

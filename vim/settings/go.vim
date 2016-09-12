@@ -1,7 +1,7 @@
 " BASIC PREFS
 let g:go_play_open_browser = 1
 let g:go_fmt_command = "goimports"
-" let g:syntastic_go_checkers = ['golint', 'govet']
+let g:go_list_type = "quickfix"
 
 " SYNTAX HIGHLIGHTING
 let g:go_highlight_functions = 1

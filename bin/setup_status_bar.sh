@@ -52,7 +52,7 @@ __wan_ip(){
 
 run_github(){
 	# echo "#[bg=blue fg=colour255]  D "
-	[[ -n $DISABLE_POLLING ]] && echo "#[bg=blue fg=colour255]  $(~/.yadr/bin/github-notifications -token=$GITHUB_TOKEN) "
+	echo "#[bg=blue fg=colour255]  $(~/.yadr/bin/github-notifications -token=$GITHUB_TOKEN) "
 }
 
 run_date(){
@@ -71,7 +71,7 @@ run_git(){
 }
 
 if [ "$1" == 'left' ]; then
-  echo "$(run_git) $(run_github)"
+  echo "$(run_git) $(__lan_ip)"
   echo "$(run_git) "
 elif [ "$1" == 'right' ]; then
   echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"

@@ -1,8 +1,6 @@
 
 source "${TMUX_DIR_HOME}/battery.sh"
 
-HEART_FULL="♥"
-
 print_battery(){
   if [[ "$(battery_external_connected)" = "No" ]]; then
     power="🔋"

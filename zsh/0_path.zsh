@@ -12,11 +12,5 @@ path=(
 )
 export GOPATH=$HOME/gocode
 export PROJECTS=$HOME/Projects
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/chrism/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/chrism/google-cloud-sdk/completion.zsh.inc'
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh

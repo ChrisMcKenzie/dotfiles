@@ -1,3 +1,4 @@
 dotfiles () {
-  vim $PROJECTS/dotfiles/
+  cd $PROJECTS/dotfiles/
+  vim .
 }
