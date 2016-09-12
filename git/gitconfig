@@ -135,5 +135,5 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[user]
-	signingkey = F7D5DC9B
+[commit]
+	gpgsign = true
