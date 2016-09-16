@@ -241,6 +241,15 @@ defaults write com.apple.dashboard devmode -bool true
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
+VENDORID="$(ioreg -n IOHIDKeyboard -r | awk '$2 == "\"VendorID\"" { print $4 }')"
+PRODUCTID="$(ioreg -n IOHIDKeyboard -r | awk '$2 == "\"ProductID\"" { print $4 }')"
+
+echo "Setting CapsLock to CTRL..."
+/usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.${VENDORID}-${PRODUCTID}-0 array" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+/usr/libexec/PlistBuddy -c "Add :com.apple.keyboard.modifiermapping.${VENDORID}-${PRODUCTID}-0: dict" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+/usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.${VENDORID}-${PRODUCTID}-0:0:HIDKeyboardModifierMappingDst integer 2" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+/usr/libexec/PlistBuddy -c "Add com.apple.keyboard.modifiermapping.${VENDORID}-${PRODUCTID}-0:0:HIDKeyboardModifierMappingSrc integer 0" ~/Library/Preferences/ByHost/.GlobalPreferences.*.plist
+
 # Disable local Time Machine backups
 # hash tmutil &> /dev/null && sudo tmutil disablelocal
 

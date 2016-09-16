@@ -39,7 +39,7 @@ export -f shell_is_bsd
 source "${TMUX_DIR_HOME}/tmux/segments/now_playing.sh"
 source "${TMUX_DIR_HOME}/tmux/segments/battery.sh"
 # source "${TMUX_DIR_HOME}/tmux/segments/mail.sh"
-# source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
+source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
 # source "${TMUX_DIR_HOME}/tmux/segments/calendar.sh"
 
 __lan_ip(){
@@ -71,7 +71,7 @@ run_git(){
 }
 
 if [ "$1" == 'left' ]; then
-  echo "$(run_git) $(__lan_ip)"
+  echo "$(run_git) $(__lan_ip) $(__wan_ip) "
   echo "$(run_git) "
 elif [ "$1" == 'right' ]; then
   echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"

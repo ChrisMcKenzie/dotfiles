@@ -137,3 +137,5 @@
 	required = true
 [commit]
 	gpgsign = true
+[credential]
+	helper = osxkeychain

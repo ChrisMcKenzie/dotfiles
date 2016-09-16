@@ -14,3 +14,9 @@ export GOPATH=$HOME/gocode
 export PROJECTS=$HOME/Projects
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
+#
+fpath=(
+  /usr/local/share/zsh/site-functions
+  $fpath
+)
+
