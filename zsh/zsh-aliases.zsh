@@ -27,3 +27,6 @@ compctl -W $PROJECTS -/ pj
 
 mygo () { cd $GOPATH/src/github.com/chrismckenzie/$1; }
 compctl -W $GOPATH/src/github.com/chrismckenzie -/ mygo
+
+gop () { cd $GOPATH/src/github.com/$1; }
+compctl -W $GOPATH/src/github.com -/ gop

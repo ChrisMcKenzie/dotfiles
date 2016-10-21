@@ -111,6 +111,7 @@ alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias gpgkey="gpg --armor --export $EMAIL | pbcopy | echo '=> GPG Public key copied to pasteboard.'"
 
 # Zippin
 alias gz='tar -zcvf'
