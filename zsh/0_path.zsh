@@ -8,15 +8,10 @@ path=(
   $HOME/node_modules/.bin
   $HOME/Library/Android/sdk/platform-tools/
   $HOME/go_appengine
+  $HOME/.minimesos/bin
   $GOBIN
 )
 export GOPATH=$HOME/gocode
 export PROJECTS=$HOME/Projects
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
-#
-fpath=(
-  /usr/local/share/zsh/site-functions
-  $fpath
-)
-

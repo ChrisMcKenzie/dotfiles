@@ -1,3 +1,4 @@
 Plug 'rking/ag.vim'
 Plug 'vim-scripts/IndexedSearch'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
