@@ -47,7 +47,7 @@ __lan_ip(){
 }
 
 __wan_ip(){
-  echo "#[fg=colour27 bg=colour255] ⓦ #[fg=colour236]$(curl icanhazip.com)"
+  echo "#[fg=blue bg=colour255] ⓦ #[fg=colour236]$(curl icanhazip.com)"
 }
 
 run_github(){
@@ -57,6 +57,10 @@ run_github(){
 
 run_date(){
   echo "#[bg=blue fg=colour255]  $(date +"%a %b %d %I:%M%p") "
+}
+
+run_wifi() {
+  echo "#[bg=colour255 fg=blue]  #[fg=colour236]$(~/.yadr/bin/wifi-signal-strength) "
 }
 
 function in_git_repo {
@@ -71,7 +75,7 @@ run_git(){
 }
 
 if [ "$1" == 'left' ]; then
-  echo "$(run_git) $(__lan_ip) $(__wan_ip) "
+  echo "$(run_git) $(__lan_ip) $(__wan_ip) #[fg=brightred]|"
   echo "$(run_git) "
 elif [ "$1" == 'right' ]; then
   echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"

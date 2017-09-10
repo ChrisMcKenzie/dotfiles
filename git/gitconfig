@@ -141,3 +141,5 @@
 	gpgsign = true
 [credential]
   helper = osxkeychain
+[http]
+	cookiefile = /Users/chrism/.gitcookies

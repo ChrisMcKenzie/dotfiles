@@ -1,5 +1,5 @@
 Plug 'briancollins/vim-jst'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'js' }
 Plug 'rodjek/vim-puppet'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'digitaltoad/vim-jade'
@@ -13,10 +13,14 @@ Plug 'skwp/vim-html-escape'
 Plug 'tpope/vim-haml'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'fatih/vim-go'
-Plug 'othree/html5.vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'isRuslan/vim-es6'
 Plug 'rust-lang/rust.vim'
-Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-markdown'
 Plug 'b4b4r07/vim-hcl'
+Plug 'leafgarland/typescript-vim'
+Plug 'rhysd/vim-crystal'
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'zah/nim.vim', {'for': 'nim'}

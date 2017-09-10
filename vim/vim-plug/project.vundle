@@ -2,3 +2,4 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'xolox/vim-misc'
+Plug 'FredKSchott/CoVim'
