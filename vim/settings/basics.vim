@@ -13,6 +13,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+let g:gitgutter_max_signs=9999
+
+
 " Relative numbers when not in insert mode
 " au BufEnter * :set rnu
 " au BufLeave * :set nu
