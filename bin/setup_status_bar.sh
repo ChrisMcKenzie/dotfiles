@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Shell Configuration
 # vim: noai:sw=2:ts=2
 
@@ -32,18 +34,26 @@ shell_is_linux() { [[ $SHELL_PLATFORM == 'linux' || $SHELL_PLATFORM == 'bsd' ]];
 shell_is_osx()   { [[ $SHELL_PLATFORM == 'osx' ]]; }
 shell_is_bsd()   { [[ $SHELL_PLATFORM == 'bsd' || $SHELL_PLATFORM == 'osx' ]]; }
 
-export -f shell_is_linux
-export -f shell_is_osx
-export -f shell_is_bsd
-
-source "${TMUX_DIR_HOME}/tmux/segments/now_playing.sh"
-source "${TMUX_DIR_HOME}/tmux/segments/battery.sh"
+# export -f shell_is_linux
+# export -f shell_is_osx
+# export -f shell_is_bsd
+#
+# source "${TMUX_DIR_HOME}/tmux/segments/now_playing.sh"
+# source "${TMUX_DIR_HOME}/tmux/segments/battery.sh"
 # source "${TMUX_DIR_HOME}/tmux/segments/mail.sh"
-source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
+# source "${TMUX_DIR_HOME}/tmux/segments/weather.sh"
 # source "${TMUX_DIR_HOME}/tmux/segments/calendar.sh"
 
 __lan_ip(){
-  echo "#[fg=blue bg=colour255]  #[fg=colour236]$(ifconfig en0 | grep 'inet ' | awk '{print $2}') "
+  ifaces=($(route | grep default | awk '{print $8}'))
+  
+  message=""
+  for i in "${ifaces[@]}"
+  do
+    message+="#[fg=blue bg=colour255]  #[fg=colour236]$(ifconfig "${i}" | grep 'inet ' | awk '{print $2}') "
+  done
+
+  echo $message
 }
 
 __wan_ip(){
@@ -56,14 +66,14 @@ run_github(){
 }
 
 run_date(){
-  echo "#[bg=blue fg=colour255]  $(date +"%a %b %d %I:%M%p") "
+  echo "#[bg=blue fg=colour8]  $(date +"%a %b %d %I:%M%p") "
 }
 
 run_wifi() {
   echo "#[bg=colour255 fg=blue]  #[fg=colour236]$(~/.yadr/bin/wifi-signal-strength) "
 }
 
-function in_git_repo {
+in_git_repo() {
 	git branch > /dev/null 2>&1 && return
   return 1
 }
@@ -74,10 +84,8 @@ run_git(){
   echo "#[bg=colour237 fg=colour255] $promptchar_git" && return
 }
 
-if [ "$1" == 'left' ]; then
-  echo "$(run_git) $(__lan_ip) $(__wan_ip) #[fg=brightred]|"
-  echo "$(run_git) "
-elif [ "$1" == 'right' ]; then
-  echo "#[fg=white] $(print_now_playing) $(print_battery) $(run_date)"
+if [ "$1" = "left" ]; then
+  echo "$(run_git) $(__lan_ip)$(__wan_ip) #[fg=brightred]|"
+elif [ "$1" = "right" ]; then
   echo "#[fg=white] $(run_date)"
 fi

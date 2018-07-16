@@ -13,7 +13,7 @@ Plug 'skwp/vim-html-escape'
 Plug 'tpope/vim-haml'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go'
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'isRuslan/vim-es6'

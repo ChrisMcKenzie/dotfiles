@@ -31,13 +31,6 @@ alias lsg='ll | grep'
 alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
-# vim using
-nvim --version > /dev/null 2>&1
-NEOVIM_INSTALLED=$?
-if [ $NEOVIM_INSTALLED -eq 0 ]; then
-  alias vim="nvim"
-fi
-
 # vimrc editing
 alias ve='vim ~/.vimrc'
 

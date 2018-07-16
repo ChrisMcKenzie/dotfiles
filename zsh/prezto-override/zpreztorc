@@ -35,8 +35,6 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'node' \
   'archive' \
-  'fasd' \
-  'osx' \
   'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \

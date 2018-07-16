@@ -1,4 +1,4 @@
-set clipboard=unnamed
+set clipboard=unnamedplus
 set laststatus=2
 
 colorscheme chrism-eighties
@@ -6,6 +6,9 @@ set background=dark
 set colorcolumn=80
 set numberwidth=4
 set completeopt=menu
+
+" set ii as escape
+imap ii <Esc>
 
 let g:deoplete#enable_at_startup = 1
 
