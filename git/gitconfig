@@ -118,7 +118,7 @@
   default = current
 [core]
   autocrlf = false
-  editor = nvim
+  editor = vim
   excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false
@@ -140,6 +140,12 @@
 [commit]
 	gpgsign = true
 [credential]
-  helper = osxkeychain
+	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
+[gpg]
+  program = /mnt/c/Program Files (x86)/GnuPG/bin/gpg.exe
 [http]
 	cookiefile = /Users/chrism/.gitcookies
+[user]
+	email = chris@chrismckenzie.io
+	name = ChrisMcKenzie
+	signingkey = 49AC2F46BF61937F

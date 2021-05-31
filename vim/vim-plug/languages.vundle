@@ -7,7 +7,6 @@ Plug 'groenewege/vim-less'
 Plug 'itspriddle/vim-jquery'
 Plug 'kchmck/vim-coffee-script'
 Plug 'neomake/neomake'
-Plug 'garbas/vim-snipmate'
 Plug 'nelstrom/vim-markdown-preview'
 Plug 'skwp/vim-html-escape'
 Plug 'tpope/vim-haml'
@@ -24,3 +23,5 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/vim-crystal'
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 Plug 'zah/nim.vim', {'for': 'nim'}
+Plug 'saltstack/salt-vim', {'for': 'sls'}
+Plug 'earthly/earthly.vim'

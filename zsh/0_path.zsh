@@ -9,6 +9,7 @@ path=(
   $HOME/Library/Android/sdk/platform-tools/
   $HOME/go_appengine
   $HOME/.minimesos/bin
+  $HOME/.local/bin
   /usr/local/go/bin
   $GOBIN
 )
